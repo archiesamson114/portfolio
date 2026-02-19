@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Archie Samson | Portfolio</title>
+  <meta name="description" content="Personal engineering portfolio: AI, computer vision, cybersecurity labs, and hardware builds.">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="wrap header-grid">
+      <div>
+        <p class="kicker">PERSONAL PROJECTS</p>
+        <h1 class="title">Archie Samson</h1>
+        <p class="subtitle">
+          A collection of projects I’ve built while studying engineering — mostly AI and software, with a big interest in hardware, security,
+          and anything I can test properly.
+        </p>
+
+        <div class="cta-row">
+          <a class="btn primary" href="#projects">Projects</a>
+          <a class="btn" href="#contact">Contact</a>
+          <a class="btn" href="mailto:archiesamson114@gmail.com">Email</a>
+          <a class="btn" href="https://www.linkedin.com/in/archie-samson-808621324/" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a class="btn" href="#" target="_blank" rel="noreferrer">GitHub</a>
+        </div>
+
+        <div class="chips">
+          <span class="chip">Transformers</span>
+          <span class="chip">YOLOv8</span>
+          <span class="chip">Time Series</span>
+          <span class="chip">Cybersecurity</span>
+          <span class="chip">Embedded</span>
+          <span class="chip">Electronics</span>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <h2 class="hero-card-title">Highlights</h2>
+        <ul class="bullets">
+          <li>Transformer NLP project for fault report triage.</li>
+          <li>Forecasting pipeline with evaluation + plotted results.</li>
+          <li>YOLOv8 object detection with downloadable weights.</li>
+          <li>Final-year microscope build (brightfield + fluorescence).</li>
+          <li>Cybersecurity labs: buffer overflow + shellcode execution.</li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap" id="projects">
+    <!-- CURRENT PROJECT -->
+    <section class="section" id="current">
+      <div class="section-head">
+        <h2>Current Project</h2>
+        <p class="muted">
+          My final-year build: a brightfield + fluorescence microscope that uses a Raspberry Pi to stream live sample video to a monitor.
+        </p>
+      </div>
+
+      <article class="card spotlight">
+        <div class="card-top">
+          <span class="tag">Final Year</span>
+          <span class="tag">Optics</span>
+          <span class="tag">Raspberry Pi</span>
+          <span class="tag">3D Printed</span>
+        </div>
+
+        <h3>Brightfield + Fluorescence Microscope (Raspberry Pi Video Display)</h3>
+        <p class="muted">
+          I’m building a compact microscope where I can swap between brightfield and fluorescence.
+          The mechanical structure is designed for printing, and the camera feed is handled by a Raspberry Pi.
+        </p>
+
+        <div class="gallery-inline">
+          <img class="zoomable" src="microscope1.png" alt="Microscope assembly"
+               data-caption="Microscope assembly — overall structure and optical housing.">
+          <img class="zoomable" src="microscope2.png" alt="Microscope exploded view"
+               data-caption="Exploded view — modular parts designed for printing and assembly.">
+        </div>
+
+        <ul class="bullets">
+          <li>Optical path design for both illumination modes</li>
+          <li>Space for filters / fluorescence pathway components</li>
+          <li>Camera streaming to display video in real time</li>
+          <li>Printed structure designed around modular parts</li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- AI PROJECTS -->
+    <section class="section" id="featured">
+      <div class="section-head">
+        <h2>AI Projects</h2>
+        <p class="muted">
+          These are the ones I’m most proud of. I’ve included code/configs and outputs so it’s easy to see what I actually built.
+        </p>
+      </div>
+
+      <div class="grid featured">
+        <!-- Project 1: Transformer -->
+        <article class="card" id="transformer">
+          <div class="card-top">
+            <span class="tag">Transformer</span>
+            <span class="tag">NLP</span>
+            <span class="tag">Fault Reports</span>
+          </div>
+
+          <h3>Transformer-style NLP Model — Fault Triage</h3>
+          <p class="muted">
+            I trained a small transformer-style NLP model on factory-style report text, then used it to predict likely faults and triage information.
+            The goal was to turn messy descriptions into something structured and useful.
+          </p>
+
+          <h4 class="subhead">What I focused on</h4>
+          <ul class="bullets">
+            <li><strong>Tokenisation + preprocessing</strong> to make the text usable</li>
+            <li><strong>Multi-head attention</strong> so the model can learn different relationships in the reports</li>
+            <li><strong>Bidirectional context</strong> (BERT-like idea) to improve meaning from both sides</li>
+          </ul>
+
+          <p class="muted small">
+            Full source code + dataset are available to download. Feel free to reuse the structure for your own text classification / triage projects.
+          </p>
+
+          <div class="links-row">
+            <a class="btn primary" href="assets/code/EEEE3129_Coursework1_extracted.py" target="_blank" rel="noreferrer">Open full code</a>
+            <a class="btn" href="assets/code/EEEE3129_Coursework1_extracted.py" download>Download code (.py)</a>
+            <a class="btn" href="assets/data/factoryReports_export.csv" download>Download dataset (.csv)</a>
+            <a class="btn" href="assets/data/datasheet.pdf" download>Download datasheet</a>
+          </div>
+
+          <h4 class="subhead">Code Window</h4>
+          <div class="code-window">
+            <div class="code-window-bar">
+              <span class="dot red"></span><span class="dot amber"></span><span class="dot green"></span>
+              <span class="code-title" id="codePathLabelP1">assets/code/EEEE3129_Coursework1_extracted.py</span>
+            </div>
+            <pre class="code-pre"><code id="codeViewerP1">Loading code…</code></pre>
+          </div>
+
+          <h4 class="subhead">Dataset Preview (first 25 rows)</h4>
+          <div class="data-window">
+            <div class="data-window-bar">
+              <span class="tag">CSV</span>
+              <span class="data-title" id="dataPathLabelP1">assets/data/factoryReports_export.csv</span>
+            </div>
+            <pre class="data-pre"><code id="dataViewerP1">Loading dataset preview…</code></pre>
+          </div>
+        </article>
+
+        <!-- Project 2: Forecasting -->
+        <article class="card" id="weather">
+          <div class="card-top">
+            <span class="tag">Forecasting</span>
+            <span class="tag">Time Series</span>
+            <span class="tag">Evaluation</span>
+          </div>
+
+          <h3>Forecasting Pipeline (Coursework 2)</h3>
+          <p class="muted">
+            A forecasting pipeline I built to understand how model choice affects performance on time-series style data.
+            I kept the evaluation simple and focused on comparing outputs against the expected curve.
+          </p>
+
+          <h4 class="subhead">Performance</h4>
+          <div class="metric-grid">
+            <div class="metric">
+              <div class="metric-label">overall_performance</div>
+              <div class="metric-value">0.12363208856161892</div>
+            </div>
+            <div class="metric">
+              <div class="metric-label">rmse_performance</div>
+              <div class="metric-value">0.0026926966661568654</div>
+            </div>
+          </div>
+
+          <div class="links-row">
+            <a class="btn primary" href="assets/code/EEEE3129_Coursework2_extracted.py" target="_blank" rel="noreferrer">Open full code</a>
+            <a class="btn" href="assets/code/EEEE3129_Coursework2_extracted.py" download>Download code (.py)</a>
+            <a class="btn" href="assets/data/UKLoad2023_preview.json" download>Download dataset preview</a>
+            <a class="btn" href="assets/data/datasheet.pdf" download>Download datasheet</a>
+          </div>
+
+          <h4 class="subhead">Results (click to zoom)</h4>
+          <div class="image-grid">
+            <figure class="fig">
+              <img class="zoomable" src="assets/images/weather_feature_vs_label.png" alt="Feature vs label plot"
+                   data-caption="Feature data vs label data (settlement sequence).">
+              <figcaption class="muted small">Feature vs label</figcaption>
+            </figure>
+
+            <figure class="fig">
+              <img class="zoomable" src="assets/images/weather_lr_plot1.png" alt="Linear regression plot 1"
+                   data-caption="Linear Regression outputs vs train/test (Plot 1).">
+              <figcaption class="muted small">Linear Regression comparison (1)</figcaption>
+            </figure>
+
+            <figure class="fig">
+              <img class="zoomable" src="assets/images/weather_lr_plot2.png" alt="Linear regression plot 2"
+                   data-caption="Linear Regression outputs vs train/test (Plot 2).">
+              <figcaption class="muted small">Linear Regression comparison (2)</figcaption>
+            </figure>
+          </div>
+
+          <h4 class="subhead">Code Window</h4>
+          <div class="code-window">
+            <div class="code-window-bar">
+              <span class="dot red"></span><span class="dot amber"></span><span class="dot green"></span>
+              <span class="code-title" id="codePathLabelP2">assets/code/EEEE3129_Coursework2_extracted.py</span>
+            </div>
+            <pre class="code-pre"><code id="codeViewerP2">Loading code…</code></pre>
+          </div>
+
+          <h4 class="subhead">Dataset Preview</h4>
+          <div class="data-window">
+            <div class="data-window-bar">
+              <span class="tag">JSON</span>
+              <span class="data-title" id="dataPathLabelP2">assets/data/UKLoad2023_preview.json</span>
+            </div>
+            <pre class="data-pre"><code id="dataViewerP2">Loading dataset preview…</code></pre>
+          </div>
+        </article>
+
+        <!-- Project 3: YOLO -->
+        <article class="card" id="yolo">
+          <div class="card-top">
+            <span class="tag">Computer Vision</span>
+            <span class="tag">YOLOv8</span>
+            <span class="tag">Weights</span>
+          </div>
+
+          <h3>YOLOv8 Object Detection</h3>
+          <p class="muted">
+            This was my first proper object detection build. The main deliverable is the trained weights — you can download them and run inference
+            straight away, or fine-tune them on another dataset.
+          </p>
+
+          <h4 class="subhead">Downloads</h4>
+          <div class="links-row">
+            <a class="btn primary" href="assets/weights/yolo_best.pt" download>Download weights (best.pt)</a>
+            <a class="btn" href="assets/yolo/yolo_args.yaml" download>Download config (args.yaml)</a>
+            <a class="btn" href="assets/yolo/yolo_results.csv" download>Download training results (CSV)</a>
+            <a class="btn" href="#" target="_blank" rel="noreferrer">Dataset link</a>
+          </div>
+
+          <h4 class="subhead">How to run inference</h4>
+          <pre class="data-pre"><code>pip install ultralytics
+
+# CLI
+yolo detect predict model=assets/weights/yolo_best.pt source=path/to/image.jpg
+
+# Python
+from ultralytics import YOLO
+model = YOLO("assets/weights/yolo_best.pt")
+results = model("path/to/image.jpg")
+results[0].save()</code></pre>
+
+          <h4 class="subhead">Training config (loaded from file)</h4>
+          <div class="code-window">
+            <div class="code-window-bar">
+              <span class="dot red"></span><span class="dot amber"></span><span class="dot green"></span>
+              <span class="code-title" id="yoloArgsPathLabel">assets/yolo/yolo_args.yaml</span>
+            </div>
+            <pre class="code-pre"><code id="yoloArgsViewer">Loading YOLO config…</code></pre>
+          </div>
+
+          <h4 class="subhead">Evidence (click to zoom)</h4>
+          <div class="image-grid">
+            <figure class="fig">
+              <img class="zoomable" src="assets/images/yolo_results.png" alt="YOLO training curves"
+                   data-caption="YOLO training curves (loss/metrics over training).">
+              <figcaption class="muted small">Training curves</figcaption>
+            </figure>
+
+            <figure class="fig">
+              <img class="zoomable" src="assets/images/yolo_confusion_matrix.png" alt="YOLO confusion matrix"
+                   data-caption="Confusion matrix from evaluation.">
+              <figcaption class="muted small">Confusion matrix</figcaption>
+            </figure>
+
+            <figure class="fig">
+              <img class="zoomable" src="assets/images/yolo_demo_people.jpg" alt="YOLO example output"
+                   data-caption="Example output image with predicted boxes.">
+              <figcaption class="muted small">Example prediction</figcaption>
+            </figure>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- CYBERSECURITY -->
+    <section class="section" id="cyber">
+      <div class="section-head">
+        <h2>Cybersecurity (Lab Projects)</h2>
+        <p class="muted">
+          A few hands-on exploitation labs I worked through to understand memory layout, debugging, and how vulnerabilities are proven in practice.
+          (Educational / controlled environment.)
+        </p>
+      </div>
+
+      <div class="grid">
+        <!-- Buffer Overflow -->
+        <article class="card cyber-card" id="buffer-overflow">
+          <div class="card-top">
+            <span class="tag">Buffer Overflow</span>
+            <span class="tag">Debugging</span>
+            <span class="tag">Memory</span>
+          </div>
+          <figure class="fig">
+            <img class="zoomable"
+                 src="assets/images/cyber_buffer_overflow_execution.png"
+                 alt="Buffer overflow proof"
+                 data-caption="Stack buffer overflow lab — confirming control over execution flow.">
+            <figcaption class="muted small">Click to zoom</figcaption>
+          </figure>
+          
+          <h3>Stack Buffer Overflow</h3>
+          <p class="muted">
+            I built and tested inputs to overflow a stack buffer, confirm control of the saved return address,
+            and understand exactly how the program’s execution flow can be redirected.
+          </p>
+        </article>
+
+        <!-- Shellcode -->
+        <article class="card cyber-card" id="shellcode">
+          <div class="card-top">
+            <span class="tag">Shellcode</span>
+            <span class="tag">Payload</span>
+            <span class="tag">Proof</span>
+          </div>
+
+          <h3>Shellcode Execution</h3>
+          <p class="muted">
+            After getting comfortable with the overflow mechanics, I moved on to executing a payload.
+            The screenshot shows the payload running successfully in the target environment.
+          </p>
+
+          <figure class="fig">
+            <img class="zoomable" src="assets/images/cyber_shellcode_execution.png" alt="Shellcode execution proof"
+                 data-caption="Shellcode execution proof — payload runs and produces the expected result.">
+            <figcaption class="muted small">Click to zoom</figcaption>
+          </figure>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="section-head">
+        <h2>Contact</h2>
+        <p class="muted">If you want to chat about any of these projects, email me.</p>
+      </div>
+
+      <article class="card">
+        <p><strong>Archie Samson</strong></p>
+        <p><a href="mailto:archiesamson114@gmail.com">archiesamson114@gmail.com</a></p>
+        <p><a href="https://www.linkedin.com/in/archie-samson-808621324/" target="_blank" rel="noreferrer">LinkedIn</a></p>
+      </article>
+    </section>
+
+    <footer class="footer">
+      <small class="muted">© <span id="year"></span> Archie Samson</small>
+    </footer>
+  </main>
+
+  <!-- Image Lightbox -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <div class="lightbox-backdrop" data-close="true"></div>
+    <div class="lightbox-panel" role="dialog" aria-modal="true" aria-label="Image preview">
+      <button class="lightbox-close" data-close="true" aria-label="Close">✕</button>
+      <img id="lightboxImg" alt="">
+      <p id="lightboxCap" class="muted small"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
